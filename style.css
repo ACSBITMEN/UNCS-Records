@@ -80,20 +80,14 @@ canvas {
 }
 
 .container_tittle h1 {
+    background-color: var(--ColorMain);
     white-space: nowrap;
     border-right: 4px solid;
-    width: 28ch; /*Numero de caracteres del texto original*/
-    max-height: 70px;
-    color: var(--ColorMain); 
-    text-shadow: /*Sombras*/
-    0 0 10px rgba(9, 255, 0, 0.5),
-    0 0 10px rgba(9, 255, 0, .5),
-    0 0 10px rgba(9, 255, 0, .5),
-    0 0 10px rgba(9, 255, 0, .5);
-
-    animation: typing 2s steps(29), blink .5s infinite step-end alternate; /*Animacion de Machine Write*/
+    width: 17ch; /*Numero de caracteres del texto original*/
+    max-height: 35px;
+    color: black; 
+    animation: typing 3s steps(17), blink .5s infinite step-end alternate; /*Animacion de Machine Write*/
     overflow: hidden;
-
     white-space: normal;
     overflow-wrap: break-word;
 }
@@ -150,14 +144,12 @@ canvas {
 }
 
 #aboutMe p {
+    color: var(--ColorMain);
     width: 60%;
     height: 100%;
 }
 
 #tarjetMe {
-    background-image: url(Img/TheMatrix24.gif);/**/
-    background-size: contain; /*La imagen se ajusta al contendor*/
-    background-repeat: no-repeat;/*No se repite para rrellenar espacio*/
     min-width: 0; /*Tamaño minimo*/
     width: 40%; /*Tamaño general responsive*/
     min-width: 170px; /*Tamaño Maxino*/
@@ -168,19 +160,129 @@ canvas {
     overflow: hidden /* Para ocultar el desbordamiento de la imagen */
 }
 
-#tarjetMe img {
-    width: 80%;
-    max-width: 200px;
-    object-fit: cover; /* Para que la imagen se ajuste proporcionalmente al contenedor */
+#ContainerImg_tarjetMe {
+    width: 100%;
+    height: 75%;
+    padding: 5px;
+}
+
+#ContainerImg_tarjetMe img {
+    background-image: url(Img/TheMatrix10.gif);/*Fondo*/
+    background-size: contain; /*La imagen se ajusta al contendor*/
+    background-repeat: no-repeat;/*No se repite para rrellenar espacio*/
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para que la imagen se ajuste proporcionalmente al contenedor */
 }
 
 #tarjetMe img:hover {
     filter: hue-rotate(90deg);
 }
 
+#tarjetMe #Container_btn-social {
+    background-color: rgba(0, 100, 0, 0.5);
+    width: 100%;
+    height: 25%;
+    border: 1px solid var(--ColorMain);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+} 
+
+#Container_btn-social i {
+    color: var(--ColorMain);
+    font-size: x-large;
+} 
+
 #skills {
     width: 100%;
     height: 30%;
+}
+
+#skills .body_description {
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#skills .body_description section {
+    width: 33%;
+    height: 100%;
+}
+
+#skills_options {
+    background-color: rgba(0, 100, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+/* Estilo para la barra de desplazamiento */
+#skills_options::-webkit-scrollbar {
+    width: 0px;
+}
+
+#skills_options li {
+    color: var(--ColorMain);
+    width: 100%;
+    height: 30px;
+    margin: 1px 0;
+    padding-left: .4rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#skills_options li:hover {
+    background-color: var(--ColorMain);
+    color: rgb(0, 55, 0);
+    cursor: pointer;
+}
+
+#skills_options li p {
+    color: var(--ColorMain);
+    height: 100%;
+    margin-bottom: 0;
+    font-size: 0.9em;
+}
+#skills_options li p span{
+    color: rgba(0, 55, 0, 0);
+    font-size: 0.9em;
+}
+
+#skills_options li:hover p {
+    color: rgb(0, 55, 0);
+    font-size: 1em;
+}
+#skills_options li:hover p span{
+    color: rgb(0, 55, 0);
+    margin-right: .5rem;
+    font-size: 1.2em;
+}
+
+#skills_options li i {
+    color: var(--ColorMain);
+    padding-right: .5rem;
+    font-size: 1.2em;
+}
+
+
+#skills_options li:hover i {
+    color: rgb(0, 55, 0);
+}
+
+#skills .body_description section img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 #proyects {
@@ -195,7 +297,7 @@ canvas {
 .body_description p {
     font-size: 16px;
     line-height: 1.5;
-    color: #ffffffb7;
+    color: var(--ColorMain);
     margin-bottom: 20px;
 }
 
@@ -203,16 +305,6 @@ h2 {
     color: var(--ColorMain);
     text-align: center;
     width: 100%;
-    height: 20%;
-}
-
-#description div:hover .TextNeon {
-    text-transform: uppercase;
-    cursor: pointer;
-    color: var(--ColorMain);
-    text-shadow: 
-    0 0 10px rgba(9, 255, 0, 0.5),
-    0 0 10px rgba(9, 255, 0, .5),
-    0 0 10px rgba(9, 255, 0, .5),
-    0 0 10px rgba(9, 255, 0, .5);
+    height: 35px;
+    border: 2px solid var(--ColorMain);
 }
