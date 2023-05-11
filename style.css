@@ -1,7 +1,9 @@
 /*VARIABLES*/
 
 :root {
-    --ColorMain: #0f0;
+    --ColorMain: rgba(0, 255, 0, 0.822);
+    --fontMatrix: font-family: "Matrix Code NFI", monospace;
+    --filterPhoto: hue-rotate(90deg);
 }
 
 /* Reset de estilos */
@@ -9,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--fontMatrix);
 }
 
 /*EFECTO Glassmorphism*/
@@ -53,8 +56,8 @@ canvas {
 }
 
 #tarjet {
-    width: 80%;
-    max-width: 1100px;
+    width: 90%;
+    max-width: 1200px;
     height: 80%;
     max-height: 620px;
     display: flex;
@@ -62,30 +65,127 @@ canvas {
 }
 
 #logo {
+    width: 35%;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
+.container_tittle {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    display: flex;
+}
+
+.container_tittle h1 {
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 28ch; /*Numero de caracteres del texto original*/
+    max-height: 70px;
+    color: var(--ColorMain); 
+    text-shadow: /*Sombras*/
+    0 0 10px rgba(9, 255, 0, 0.5),
+    0 0 10px rgba(9, 255, 0, .5),
+    0 0 10px rgba(9, 255, 0, .5),
+    0 0 10px rgba(9, 255, 0, .5);
+
+    animation: typing 2s steps(29), blink .5s infinite step-end alternate; /*Animacion de Machine Write*/
+    overflow: hidden;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/*Animacion para efecto Maquina de escribir*/
+@keyframes typing {
+    from { width: 0 }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
 .container_imgLogo {
-    width: 200px;
-    height: 200px;
-    margin-top: 10px;
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .container_imgLogo img {
+    /*filter: var(--filterPhoto);*/
     max-width: 100%;
-    max-height: 100%;
+    height: auto;
     object-fit: contain;
+    filter: hue-rotate(300deg);
 }
 
 #description {
+    width: 65%;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#description div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start
+}
+
+#description div .body_description {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+#aboutMe {
+    width: 100%;
+    height: 40%;
+}
+
+#aboutMe p {
+    width: 60%;
+    height: 100%;
+}
+
+#tarjetMe {
+    background-image: url(Img/TheMatrix24.gif);/**/
+    background-size: contain; /*La imagen se ajusta al contendor*/
+    background-repeat: no-repeat;/*No se repite para rrellenar espacio*/
+    min-width: 0; /*Tamaño minimo*/
+    width: 40%; /*Tamaño general responsive*/
+    min-width: 170px; /*Tamaño Maxino*/
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden /* Para ocultar el desbordamiento de la imagen */
+}
+
+#tarjetMe img {
+    width: 80%;
+    max-width: 200px;
+    object-fit: cover; /* Para que la imagen se ajuste proporcionalmente al contenedor */
+}
+
+#tarjetMe img:hover {
+    filter: hue-rotate(90deg);
+}
+
+#skills {
+    width: 100%;
+    height: 30%;
+}
+
+#proyects {
+    width: 100%;
+    height: 30%;
 }
 
 .tittle_description {
@@ -95,6 +195,24 @@ canvas {
 .body_description p {
     font-size: 16px;
     line-height: 1.5;
-    color: #555;
+    color: #ffffffb7;
     margin-bottom: 20px;
+}
+
+h2 {
+    color: var(--ColorMain);
+    text-align: center;
+    width: 100%;
+    height: 20%;
+}
+
+#description div:hover .TextNeon {
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--ColorMain);
+    text-shadow: 
+    0 0 10px rgba(9, 255, 0, 0.5),
+    0 0 10px rgba(9, 255, 0, .5),
+    0 0 10px rgba(9, 255, 0, .5),
+    0 0 10px rgba(9, 255, 0, .5);
 }
