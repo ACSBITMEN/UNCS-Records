@@ -67,10 +67,31 @@ for (let i = 0; i < links.length; i++) {
     const target = this.getAttribute('href');
     
     // Mostrar el elemento <article> correspondiente al enlace clickeado
-    document.querySelector(target).style.display = 'block';
+    document.querySelector(target).style.display = 'flex';
   });
 }
 
 
 /* -- TERMINA LA FUNCION OPCION/SECCION DINAMICO */
+/* ----------------------------------------------------------------- */
+
+
+/* -- COMIENZA LA FUNCION COLOR DE OPCIONES "con el click segun la opcion */
+
+var tabLinks = document.querySelectorAll('.tab-link');
+
+for (var i = 0; i < tabLinks.length; i++) {
+tabLinks[i].addEventListener('click', function() {
+    // Remove the "selected" class from all tab links
+    for (var j = 0; j < tabLinks.length; j++) {
+    tabLinks[j].classList.remove('selected');
+    }
+    
+    // Add the "selected" class to the clicked tab link
+    this.classList.add('selected');
+});
+}
+
+
+/* -- TERMINA LA FUNCION COLOR DE OPCIONES */
 /* ----------------------------------------------------------------- */

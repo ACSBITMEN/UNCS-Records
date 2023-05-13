@@ -140,7 +140,7 @@ canvas {
 
 #aboutMe {
     width: 100%;
-    height: 40%;
+    height: 35%;
 }
 
 #aboutMe p {
@@ -197,7 +197,7 @@ canvas {
 
 #proyects {
     width: 100%;
-    height: 30%;
+    height: 35%;
 }
 
 #proyects .body_description {
@@ -211,8 +211,21 @@ canvas {
     height: 100%;
 }
 
-.tabs li a .active{
-	background-color: aqua;
+.tab-link.selected {
+    background-color: var(--ColorMain);
+    width: 100%;
+    font-size: 1.2em;
+    border-radius: 3px;
+}
+
+.tab-link.selected p {
+    margin-left: 6px;
+    color: rgb(0, 55, 0);
+    font-size: 1em;
+}
+
+.tab-link.selected i {
+    color: rgb(0, 55, 0);
 }
 
 .tabs {
@@ -236,19 +249,19 @@ canvas {
     width: 100%;
     height: 50px;
     margin: 1px 0;
-    padding-left: .4rem;
     text-decoration: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 5px;
 }
 
 .tabs li:hover {
     background-color: var(--ColorMain);
     color: rgb(0, 55, 0);
-    cursor: pointer;
-    transition: .3s;
 }
 
 .tabs li a {
@@ -265,20 +278,12 @@ canvas {
     height: 100%;
     margin-bottom: 0;
     font-size: 0.9em;
-}
-.tabs li a p span{
-    color: rgba(0, 55, 0, 0);
-    font-size: 0.9em;
+    margin-left: 6px;
 }
 
 .tabs li:hover p {
     color: rgb(0, 55, 0);
     font-size: 1em;
-}
-.tabs li:hover p span{
-    color: rgb(0, 55, 0);
-    margin-right: .5rem;
-    font-size: 1.2em;
 }
 
 .tabs li i {
@@ -295,22 +300,37 @@ canvas {
 .secciones {
     width: 70%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .secciones article {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-article:not(#tab1) {
-    display: none;
+.secciones article .photo_proyect{
+    width: 50%;
+    height: 100%;
+    padding: 0px 5px;
+}
+
+.secciones article .descripcion_proyect{
+    width: 50%;
+    height: 100%;
+}
+
+/*Selector para todos los article dentro de proyectos menos #tab1*/
+.secciones article:not(#tab1) {
+    display: none; /*Ocultar*/
 }
 
 #proyects .body_description section img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: hue-rotate(90deg)
 }
 
 #desicion {
@@ -318,8 +338,10 @@ article:not(#tab1) {
     height: 30%;
 }
 
-.tittle_description {
-    margin-bottom: 10px;
+h3 {
+    margin-bottom: 5px;
+    color: var(--ColorMain);
+    text-align: center;
 }
 
 .body_description p {
