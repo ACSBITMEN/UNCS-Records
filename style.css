@@ -70,11 +70,10 @@ canvas {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    flex-wrap: nowrap;
 }
 
 .container_tittle {
-    background-color: rgb(0, 0, 0);
     width: 100%;
     display: flex;
 }
@@ -103,19 +102,41 @@ canvas {
 
 .container_imgLogo {
     width: 100%;
-    height: 400px;
-    margin-top: 20px;
+    height: 70%;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .container_imgLogo img {
-    /*filter: var(--filterPhoto);*/
-    max-width: 100%;
-    height: auto;
+    width: 100%;
     object-fit: contain;
-    filter: hue-rotate(300deg);
+}
+
+#UserDate {
+    background-color: rgba(0, 100, 0, 0.5);
+    width: 100%;
+    height: 120px;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+
+#UserDate .container_UserDate {
+    display: flex;
+    flex-direction: row;
+}
+
+#UserDate .container_UserDate i {
+    color: var(--ColorMain);
+    margin: 0 8px;
+}
+
+#UserDate .container_UserDate p {
+    color: var(--ColorMain);
 }
 
 #description {
@@ -148,6 +169,7 @@ canvas {
     width: 60%;
     height: 100%;
     padding: 0px 8px;
+    text-align: justify;
 }
 
 #tarjetMe {
@@ -193,6 +215,13 @@ canvas {
 #Container_btn-social i {
     color: var(--ColorMain);
     font-size: x-large;
+    cursor: pointer;
+} 
+#Container_btn-social i:hover {
+    color: var(--ColorMain);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .2s;
 } 
 
 #proyects {
@@ -284,6 +313,7 @@ canvas {
 .tabs li:hover p {
     color: rgb(0, 55, 0);
     font-size: 1em;
+    text-align: justify;
 }
 
 .tabs li i {
@@ -345,7 +375,7 @@ h3 {
 }
 
 .body_description p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
     color: var(--ColorMain);
     margin-bottom: 20px;
