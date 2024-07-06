@@ -7,10 +7,10 @@ let cols = Math.floor(w / 20) + 1;
 const ypos = Array(cols).fill(0);
 
 function matrix() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillStyle = 'rgba(2, 2, 29, 0.281)';
     ctx.fillRect(0, 0, w, h);
 
-    ctx.fillStyle = '#3FA2F6';
+    ctx.fillStyle = '#00BFFF';
     ctx.font = '15px monospace';
 
     const columnWidth = Math.floor(w / cols);
@@ -29,7 +29,7 @@ function matrix() {
     });
 }
 
-setInterval(matrix, 60);
+setInterval(matrix, 90);
 
 window.addEventListener('resize', () => {
     w = canvas.width = window.innerWidth;
