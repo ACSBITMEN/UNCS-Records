@@ -1,0 +1,33 @@
+/* Tu CSS existente para el componente Tarjet */
+
+/*EFECTO Glassmorphism*/
+.glass {
+  background-color: rgba(255, 255, 255, 0.13); /* ajusta la opacidad y el color de fondo */
+  backdrop-filter: blur(10px); /* ajusta la intensidad del desenfoque */
+  border-radius: 10px; /* ajusta el radio de las esquinas */
+  box-shadow: 0 8px 32px 0 rgb(0, 0, 0); /* ajusta la sombra */
+}
+/*------- - - - ------*/
+
+#tarjet {
+  display: flex;
+  width: 90%;
+  max-width: 1600px;
+  height: 90%;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent; /* Borde inicial transparente */
+  border-radius: 10px;
+  overflow: hidden; /* Asegura que el contenido no desborde del borde neon */
+  animation: neon-border 3.5s infinite alternate; /* Animación del efecto neon */
+}
+
+@keyframes neon-border {
+  0% {
+    border-color: rgba(0, 255, 255, 0);
+  }
+  100% {
+    border-color: aliceblue;
+  }
+}

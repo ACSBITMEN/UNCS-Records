@@ -1,0 +1,29 @@
+
+:root {
+  --ColorMain: #00BFFF;
+  --ColorGrey: #c9c9c9;
+  --fontMatrix: font-family: "Matrix Code NFI", monospace;
+  --filterPhoto: hue-rotate(90deg);
+}
+
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fontMatrix);
+}
+
+body {
+  background-size: cover;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
