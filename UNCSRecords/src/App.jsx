@@ -1,6 +1,6 @@
-import Background from './AnimatedBackground.jsx';
-import Tarjet from './Tarjet.jsx';
-import './styles/App.css';
+import Background from './components/AnimatedBackground';
+import Tarjet from './components/Tarjet';
+import './components/styles/App.css';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       </div>
       <div className="container_main">
         <header>
-          <h1>UNCS Records</h1>
+          <h1 id='tittle'>UNSC Records</h1>
         </header>
         <main>
           <Tarjet />

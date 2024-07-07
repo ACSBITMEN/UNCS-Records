@@ -14,20 +14,63 @@
   width: 90%;
   max-width: 1600px;
   height: 90%;
-  padding: 10px;
+  padding: 1rem;
   justify-content: center;
   align-items: center;
   border: 2px solid transparent; /* Borde inicial transparente */
   border-radius: 10px;
   overflow: hidden; /* Asegura que el contenido no desborde del borde neon */
-  animation: neon-border 3.5s infinite alternate; /* Animación del efecto neon */
+  animation: neon-border 3s infinite alternate; /* Animación del efecto neon */
+} @keyframes neon-border {0% {border-color: rgba(0, 255, 255, 0);}100% {border-color: #00BFFF;}}
+
+#tarjet .navbar {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@keyframes neon-border {
-  0% {
-    border-color: rgba(0, 255, 255, 0);
-  }
-  100% {
-    border-color: aliceblue;
-  }
+#menu {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: linear-gradient(to right, rgba(77, 77, 77, 0.212), transparent);
+  width: 100%;
+  height: 4.5rem;
+  padding: 0 3px;
+  cursor: pointer;
+  margin: .3rem 0;
+}
+
+li:hover {
+  border-left: 5px #00BFFF solid;
+}
+
+li a {
+  width: 100%;
+  height: 100%;
+  font-size: 1.1em;
+  padding: 5px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  border-radius: 5px;
+  color: #00BFFF;
+  text-decoration: none;
+}
+
+li a:hover {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.212), transparent);
+  color: aliceblue;
+}
+
+
+
+#tarjet .OpcionView {
+  background-color: thistle;
+  width: 85%;
 }
