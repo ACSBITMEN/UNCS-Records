@@ -10,43 +10,60 @@
 /*------- - - - ------*/
 
 #tarjet {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   width: 90%;
   max-width: 1600px;
   height: 90%;
   padding: 1rem;
-  justify-content: center;
-  align-items: center;
   border: 2px solid transparent; /* Borde inicial transparente */
   border-radius: 10px;
   overflow: hidden; /* Asegura que el contenido no desborde del borde neon */
   animation: neon-border 3s infinite alternate; /* Animación del efecto neon */
-} @keyframes neon-border {0% {border-color: rgba(0, 255, 255, 0);}100% {border-color: #00BFFF;}}
+} @keyframes neon-border {0% {border-color: rgba(0, 255, 255, 0);}100% {border-color: aliceblue;}}
+
+#containerImgNavBar {
+  grid-area: 1 / 1 / 3 / 2;
+  background-color: #ffe4c423;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  border: 2px solid transparent; /* Borde inicial transparente */
+  border-radius: 10px;
+  overflow: hidden; /* Asegura que el contenido no desborde del borde neon */
+  animation: neon-border 3s infinite alternate; /* Animación del efecto neon */
+}
 
 #tarjet .navbar {
-  width: 15%;
-  height: 100%;
+  grid-area: 3 / 1 / 6 / 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 #menu {
-  width: 100%;
   list-style-type: none;
-  padding: 0;
+  padding: 1rem 0 0 0;
+  
+  width: 100%;
+  height: 100%;
 }
 
 li {
   background: linear-gradient(to right, rgba(77, 77, 77, 0.212), transparent);
   width: 100%;
-  height: 4.5rem;
+  height: 4rem;
   padding: 0 3px;
-  cursor: pointer;
   margin: .3rem 0;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 li:hover {
+  background-color: #00000000;
   border-left: 5px #00BFFF solid;
 }
 
@@ -64,13 +81,39 @@ li a {
 }
 
 li a:hover {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.212), transparent);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.288), transparent);
   color: aliceblue;
+}
+
+.OpcionView {
+  grid-area: 1 / 2 / 6 / 6;
+  background-color: rgba(191, 205, 216, 0.253);
 }
 
 
 
-#tarjet .OpcionView {
-  background-color: thistle;
-  width: 85%;
+
+
+
+
+
+
+
+/*Cambio de Grid para moviles*/
+@media (max-width: 720px) {
+  #tarjet {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #containerImgNavBar {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  #tarjet .navbar {
+    grid-area: 1 / 3 / 2 / 5;
+  }
+
+  .OpcionView {
+    grid-area: 2 / 1 / 6 / 5;
+  }
 }

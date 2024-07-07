@@ -1,15 +1,12 @@
-// Tarjet.jsx
-
 import { useState } from 'react';
 import './styles/Tarjet.css';
 
 const Tarjet = () => {
-  const [currentMenu, setCurrentMenu] = useState('main'); // Estado para manejar el menú actual
+  const [currentMenu, setCurrentMenu] = useState('main'); 
 
-  // Definición de los menús y submenús
   const menus = {
     main: [
-      { label: 'Comando Espacial de las Naciones Unidas (UNSC)', submenu: 'unsc' },
+      { label: 'UNSC', submenu: 'unsc' },
       { label: 'El Covenant', submenu: 'covenant' },
       { label: 'Los Floods', submenu: 'floods' },
       { label: 'Los Forerunners', submenu: 'forerunners' }
@@ -41,7 +38,6 @@ const Tarjet = () => {
     ]
   };
 
-  // Maneja el clic en una opción del menú
   const handleMenuClick = (submenu) => {
     if (submenu) {
       setCurrentMenu(submenu);
@@ -50,6 +46,9 @@ const Tarjet = () => {
 
   return (
     <div className="glass" id="tarjet">
+      <div id='containerImgNavBar'>
+        <img src="" alt="Logo del Grupo" />
+      </div>
       <div className="navbar">
         <ul id='menu'>
           {menus[currentMenu].map((item, index) => (
