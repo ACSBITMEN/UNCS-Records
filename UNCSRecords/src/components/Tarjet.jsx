@@ -1,15 +1,20 @@
 import { useState } from 'react';
+import UNSCLogo from '../assets/Img/UNCSLogo.png';
+import CovenantLogo from '../assets/Img/CovenantLogo.png';
+import FloodLogo from '../assets/Img/FloodLogo.png';
+import ForerunnersLogo from '../assets/Img/ForerunnerLogo.png';
 import './styles/Tarjet.css';
 
 const Tarjet = () => {
-  const [currentMenu, setCurrentMenu] = useState('main'); 
+  const [currentMenu, setCurrentMenu] = useState('main');
+  const [currentLogo, setCurrentLogo] = useState(UNSCLogo); // Estado para la imagen actual
 
   const menus = {
     main: [
-      { label: 'UNSC', submenu: 'unsc' },
-      { label: 'El Covenant', submenu: 'covenant' },
-      { label: 'Los Floods', submenu: 'floods' },
-      { label: 'Los Forerunners', submenu: 'forerunners' }
+      { label: 'UNSC', submenu: 'unsc', logo: UNSCLogo },
+      { label: 'El Covenant', submenu: 'covenant', logo: CovenantLogo },
+      { label: 'Los Floods', submenu: 'floods', logo: FloodLogo },
+      { label: 'Los Forerunners', submenu: 'forerunners', logo: ForerunnersLogo }
     ],
     unsc: [
       { label: 'Historia', submenu: null },
@@ -38,21 +43,25 @@ const Tarjet = () => {
     ]
   };
 
-  const handleMenuClick = (submenu) => {
+  const handleMenuClick = (submenu, logo) => {
     if (submenu) {
       setCurrentMenu(submenu);
+      // Cambiar la imagen solo si es una opción principal diferente
+      if (logo) {
+        setCurrentLogo(logo);
+      }
     }
   };
 
   return (
     <div className="glass" id="tarjet">
       <div id='containerImgNavBar'>
-        <img src="" alt="Logo del Grupo" />
+        <img src={currentLogo} alt="Logo de la facción" />
       </div>
       <div className="navbar">
         <ul id='menu'>
           {menus[currentMenu].map((item, index) => (
-            <li key={index} className="opciones" onClick={() => handleMenuClick(item.submenu)}>
+            <li key={index} className="opciones" onClick={() => handleMenuClick(item.submenu, item.logo)}>
               <a href="#">{item.label}</a>
             </li>
           ))}
